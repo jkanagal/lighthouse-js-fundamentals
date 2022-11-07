@@ -1,0 +1,24 @@
+const sumLargestNumbers = function(data) {
+  let small = 0;
+  let larger = 0;
+  let sum = 0;
+  if (data.length == 2) {
+    sum = data[0] + data[1]
+    return sum;
+  } else if (data.length == 0) {
+    console.log("empty array");
+  } else {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] > larger) {
+        small = larger;
+        larger = data[i];
+      } else if (data[i] > small) {
+        small = data[i];
+      } else {
+        continue;
+      }
+    }
+    return sum = larger + small;
+  }
+
+};
